@@ -173,6 +173,23 @@ ul.custom-list li {
     margin: 5px;
 }
 
+footer {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 
 
 /* Responsividad */
