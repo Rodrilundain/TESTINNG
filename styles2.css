@@ -46,6 +46,13 @@ body {
 }
 
 /* Botones */
+.icon {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .icon img {
     max-width: 100%;
     height: auto;
@@ -61,6 +68,9 @@ body {
     text-decoration: none;
     color: #024c7e;
     transition: color 0.3s ease;
+    margin-top: 5px; /* Espacio entre el botón y el título */
+    text-align: center;
+    display: block;
 }
 
 .icon a:hover {
@@ -70,26 +80,21 @@ body {
 /* Contenedor de íconos */
 .ContIcons {
     display: grid;
-    grid-template-columns: repeat(9, 1fr); /* 9 botones en la primera fila */
+    grid-template-columns: repeat(9, 1fr);
     gap: 20px;
     justify-content: center;
-    max-width: 1200px; /* Limita el ancho máximo */
-    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
 /* Segunda fila con 8 botones */
-.ContIcons .icon:nth-child(n+10) { /* Del botón 10 en adelante */
+.ContIcons .icon:nth-child(n+10) {
     grid-column: span 1;
 }
 
 .ContIcons .icon:nth-child(10) {
-    grid-column: 2 / span 1; /* Ajusta el primer ícono de la segunda fila para centrar */
-}
-
-/* Ajuste del tamaño y distribución de los botones */
-.icon {
-    text-align: center;
+    grid-column: 2 / span 1;
 }
 
 /* Contenedor de botones flotantes */
@@ -142,13 +147,13 @@ body {
 /* Responsividad */
 @media (max-width: 1024px) {
     .ContIcons {
-        grid-template-columns: repeat(5, 1fr); /* 5 botones por fila en pantallas medianas */
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .ContIcons {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas verticales en pantallas pequeñas */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .floating-buttons {
