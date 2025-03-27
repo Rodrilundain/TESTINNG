@@ -36,7 +36,7 @@ body {
 
 #menu ul li a {
     text-decoration: none;
-    font-size: 31.25px; /* Aumentado un 25% */
+    font-size: 25px;
     color: #ffffff;
     transition: color 0.3s ease;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .icon img {
-    max-width: 125%; /* Aumentado un 25% */
+    max-width: 100%;
     height: auto;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -68,10 +68,9 @@ body {
     text-decoration: none;
     color: #024c7e;
     transition: color 0.3s ease;
-    margin-top: 6.25px; /* Aumentado un 25% */
+    margin-top: 5px; /* Espacio entre el botón y el título */
     text-align: center;
     display: block;
-    font-size: 31.25px; /* Aumentado un 25% */
 }
 
 .icon a:hover {
@@ -82,11 +81,11 @@ body {
 .ContIcons {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    gap: 25px; /* Aumentado un 25% */
+    gap: 20px;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 25px; /* Aumentado un 25% */
+    padding: 20px;
 }
 
 /* Ajuste para columnas de íconos en diferentes tamaños de pantalla */
@@ -116,14 +115,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12.5px; /* Aumentado un 25% */
+    gap: 10px;
     z-index: 1000;
 }
 
 /* Estilos generales para los botones */
 .floating-buttons a {
-    width: 69.75px; /* Aumentado un 25% */
-    height: 69.75px; /* Aumentado un 25% */
+    width: 55.8px;
+    height: 55.8px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -144,14 +143,14 @@ body {
 
 /* Efecto hover */
 .floating-buttons a:hover {
-    transform: scale(1.25); /* Aumentado un 25% */
+    transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos para las imágenes dentro de los botones */
 .floating-buttons a img {
-    width: 100%; /* Aumentado un 25% */
-    height: 100%; /* Aumentado un 25% */
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
 }
 
