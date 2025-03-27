@@ -88,13 +88,23 @@ body {
     padding: 20px;
 }
 
-/* Segunda fila con 8 botones */
-.ContIcons .icon:nth-child(n+10) {
-    grid-column: span 1;
+/* Ajuste para columnas de íconos en diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+    .ContIcons {
+        grid-template-columns: repeat(7, 1fr); /* 7 botones en pantallas medianas */
+    }
 }
 
-.ContIcons .icon:nth-child(10) {
-    grid-column: 2 / span 1;
+@media (max-width: 1024px) {
+    .ContIcons {
+        grid-template-columns: repeat(5, 1fr); /* 5 botones por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .ContIcons {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas más pequeñas */
+    }
 }
 
 /* Contenedor de botones flotantes */
@@ -144,18 +154,8 @@ body {
     border-radius: 50%;
 }
 
-/* Responsividad */
-@media (max-width: 1024px) {
-    .ContIcons {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
+/* Responsividad para botones flotantes */
 @media (max-width: 768px) {
-    .ContIcons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .floating-buttons {
         flex-direction: column;
         right: 45%;
