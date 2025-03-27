@@ -75,29 +75,14 @@ body {
     gap: 20px;
 }
 
-/* Ajuste del tamaño y distribución de los botones */
-.icon {
-    flex: 1 1 calc(50% - 20px); /* Dos columnas en pantallas pequeñas */
-    max-width: calc(50% - 20px);
-    text-align: center;
-}
-
-@media (min-width: 1024px) {
-    .icon {
-        flex: 1 1 calc(25% - 20px); /* Distribución en dos filas en pantallas grandes */
-        max-width: calc(25% - 20px);
-    }
-}
-
 /* Contenedor de botones flotantes */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Espacio entre botones */
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
     z-index: 1000;
 }
 
@@ -137,9 +122,12 @@ body {
 }
 
 /* Responsividad */
+/* En pantallas pequeñas, los botones se organizan en 2 columnas verticales */
 @media (max-width: 768px) {
     .floating-buttons {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        bottom: 45px;
         right: 45%;
     }
 }
