@@ -1,89 +1,9 @@
-/* General */
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-#cont {
-    width: 100%;
-    background-color: #054c8a;
-}
-
-/* Encabezado */
-#cont-nav {
-    max-width: 1366px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    height: 100px;
-    padding: 0 20px;
-}
-
-#logo img {
-    display: block;
-}
-
-#menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-#menu ul li {
-    margin: 0 10px;
-}
-
-#menu ul li a {
-    text-decoration: none;
-    font-size: 31.25px; /* Aumentado un 25% */
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-#menu ul li a:hover {
-    color: red;
-}
-
-/* Botones */
-.icon {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.icon img {
-    max-width: 125%; /* Aumentado un 25% */
-    height: auto;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.icon img:hover {
-    transform: scale(1.1);
-    border-color: red;
-}
-
-.icon a {
-    text-decoration: none;
-    color: #024c7e;
-    transition: color 0.3s ease;
-    margin-top: 6.25px; /* Aumentado un 25% */
-    text-align: center;
-    display: block;
-    font-size: 31.25px; /* Aumentado un 25% */
-}
-
-.icon a:hover {
-    color: red;
-}
-
 /* Contenedor de íconos */
 .ContIcons {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 25px; /* Aumentado un 25% */
-    justify-content: center;
+    justify-items: center; /* Asegura que cada ícono esté centrado dentro de su celda */
     max-width: 1200px;
     margin: 0 auto;
     padding: 25px; /* Aumentado un 25% */
