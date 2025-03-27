@@ -75,10 +75,18 @@ body {
     gap: 20px;
 }
 
+/* Ajuste del tamaño y distribución de los botones */
 .icon {
-    flex: 1 1 calc(16.6% - 20px);
-    max-width: calc(16.6% - 20px);
+    flex: 1 1 calc(50% - 20px); /* Dos columnas en pantallas pequeñas */
+    max-width: calc(50% - 20px);
     text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .icon {
+        flex: 1 1 calc(25% - 20px); /* Distribución en dos filas en pantallas grandes */
+        max-width: calc(25% - 20px);
+    }
 }
 
 /* Contenedor de botones flotantes */
@@ -87,14 +95,15 @@ body {
     bottom: 20px;
     right: 20px;
     display: flex;
-    flex-direction: column; /* Se alinean verticalmente */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px; /* Espacio entre botones */
     z-index: 1000;
 }
 
 /* Estilos generales para los botones */
 .floating-buttons a {
-    width: 55.8px; /* 1 cm de diámetro */
+    width: 55.8px;
     height: 55.8px;
     border-radius: 50%;
     display: flex;
@@ -122,7 +131,7 @@ body {
 
 /* Estilos para las imágenes dentro de los botones */
 .floating-buttons a img {
-    width: 80%; /* Ajuste para que la imagen quede bien dentro */
+    width: 80%;
     height: 80%;
     border-radius: 50%;
 }
@@ -130,7 +139,7 @@ body {
 /* Responsividad */
 @media (max-width: 768px) {
     .floating-buttons {
-        bottom: 45px;
+        flex-direction: column;
         right: 45%;
     }
 }
