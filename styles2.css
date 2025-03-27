@@ -1,65 +1,123 @@
-/* General */
+/* General styles */
 body {
+    padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 #cont {
     width: 100%;
-    background-color: #054c8a;
+    background-color: #093764;
 }
 
-/* Encabezado */
 #cont-nav {
+    width: 100%;
     max-width: 1366px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    height: 100px;
+    justify-content: space-between;
     padding: 0 20px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #logo img {
-    display: block;
+    flex-shrink: 0;
+    margin-right: 20px;
 }
 
-#menu ul {
+#lista ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 60px;
 }
 
-#menu ul li {
-    margin: 0 10px;
-}
-
-#menu ul li a {
+#lista ul li a {
     text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
+    font-size: 20px;
+    color: #f3e8e8;
     transition: color 0.3s ease;
 }
 
-#menu ul li a:hover {
+#lista ul li a:hover {
     color: red;
 }
 
-/* Botones */
-.icon img {
-    max-width: 100%;
+/* Banner section */
+.slide {
+    width: 100%;
     height: auto;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    text-align: center;
 }
 
-.icon img:hover {
-    transform: scale(1.1);
-    border-color: red;
+#cont-tit-bnr {
+    margin-top: 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+#tit-uno, #subtit {
+    font-size: 40px;
+    font-weight: 500;
+    color: rgb(230, 237, 241);
+    margin: 0;
+    text-align: center;
+}
+
+/* Content styles */
+#content {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.titulos h1 {
+    text-align: center;
+    font-size: 40px;
+    color: hsl(0, 6%, 90%);
+}
+
+/* Centrar los botones */
+.ContIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.icon {
+    text-align: center;
+    color: #e2001a;
+}
+
+.icon img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
 
 .icon a {
+    color: #e6ebf0;
+    font-size: 15px;
     text-decoration: none;
-    color: #024c7e;
     transition: color 0.3s ease;
 }
 
@@ -67,30 +125,31 @@ body {
     color: red;
 }
 
-/* Contenedor de íconos */
-.ContIcons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+/* Efecto hover en imágenes */
+.icon img:hover {
+    transform: scale(1.1);
+    border-color: red;
 }
 
-.icon {
-    flex: 1 1 calc(16.6% - 20px);
-    max-width: calc(16.6% - 20px);
-    text-align: center;
+/* Responsividad */
+@media (max-width: 1200px) {
+    .ContIcons {
+        justify-content: center;
+    }
 }
 
-/* Contenedor de botones flotantes */
-.floating-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column; /* Se alinean verticalmente */
-    gap: 10px; /* Espacio entre botones */
-    z-index: 1000;
+@media (max-width: 768px) {
+    .ContIcons {
+        justify-content: center;
+    }
 }
+
+@media (max-width: 480px) {
+    .ContIcons {
+        justify-content: center;
+    }
+}
+
 
 /* Estilos generales para los botones */
 .floating-buttons a {
