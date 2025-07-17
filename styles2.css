@@ -1,9 +1,9 @@
 /* ---------------- VARIABLES ---------------------- */
 :root {
-  --color-bg: #054c8a;
+  --color-bg: #063f75;         /* azul profundo */
   --color-text: #ffffff;
-  --color-accent: #ff5252;
-  --color-light: #f8f9fa;
+  --color-accent: #ffd166;     /* dorado suave */
+  --color-light: #f2f2f2;
   --font-main: 'Segoe UI', 'Roboto', sans-serif;
 }
 
@@ -13,7 +13,6 @@ body {
   font-family: var(--font-main);
   background-color: var(--color-light);
   color: #333;
-  line-height: 1.6;
 }
 
 #cont {
@@ -23,40 +22,41 @@ body {
 
 /* ---------------- HEADER / NAV ------------------- */
 #cont-nav {
-  max-width: 1366px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  height: 100px;
-  padding: 0 20px;
   justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 0 24px;
 }
 
 #logo img {
   display: block;
-  max-height: 60px;
+  height: 60px;
 }
 
 #menu ul {
-  list-style: none;
   display: flex;
-  gap: 15px;
-  margin: 0;
+  list-style: none;
   padding: 0;
+  margin: 0;
+  gap: 14px;
 }
 
 #menu ul li a {
   text-decoration: none;
-  font-size: 16px;
   color: var(--color-text);
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 #menu ul li a:hover {
   background-color: var(--color-accent);
-  color: #fff;
+  color: #000;
 }
 
 /* ---------------- ICON GRID ----------------------- */
@@ -64,10 +64,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  max-width: 1280px;
+  gap: 32px;
+  max-width: 1200px;
   margin: 60px auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .icon {
@@ -78,26 +78,26 @@ body {
 
 .icon a {
   width: 100%;
+  height: 200px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 24px;
-  border-radius: 20px;
-  background-color: var(--color-bg);
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  height: 200px;
-  color: white;
-  text-align: center;
   justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .icon img {
   width: 64px;
   height: 64px;
-  margin-bottom: 12px;
   object-fit: contain;
+  margin-bottom: 10px;
   transition: transform 0.3s ease;
 }
 
@@ -117,20 +117,21 @@ body {
   bottom: 20px;
   right: 20px;
   display: flex;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 10px;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .floating-buttons a {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 #whatsapp-button {
@@ -155,7 +156,7 @@ body {
 /* ---------------- RESPONSIVE ---------------------- */
 @media (max-width: 1024px) {
   .ContIcons {
-    justify-content: center;
+    gap: 24px;
   }
 }
 
@@ -163,7 +164,7 @@ body {
   #cont-nav {
     flex-direction: column;
     height: auto;
-    padding: 20px 10px;
+    padding: 20px;
   }
 
   .ContIcons {
@@ -171,15 +172,14 @@ body {
   }
 
   .floating-buttons {
+    right: 50%;
+    transform: translateX(50%);
     flex-direction: column;
-    right: 45%;
   }
 }
 
 ul > ul li a {
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
+  justify-content: center;
 }
