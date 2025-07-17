@@ -2,7 +2,10 @@
 :root {
   --color-bg: #054c8a;
   --color-text: #ffffff;
-  --color-accent: #fcbf49;
+  --color-accent: red;
+  --color-hover: red;
+  --color-button-bg: #ffffff;
+  --color-button-text: #054c8a;
   --font-main: 'Roboto', sans-serif;
 }
 
@@ -10,8 +13,7 @@
 body {
   margin: 0;
   font-family: var(--font-main);
-  background-color: #f4f7f9;
-  color: #333;
+  background-color: #f8f9fa;
 }
 
 #cont {
@@ -27,12 +29,10 @@ body {
   align-items: center;
   height: 100px;
   padding: 0 20px;
-  justify-content: space-between;
 }
 
 #logo img {
   display: block;
-  max-height: 80px;
 }
 
 #menu ul {
@@ -52,15 +52,14 @@ body {
   text-decoration: none;
   font-size: 16px;
   color: var(--color-text);
-  padding: 10px 16px;
-  border-radius: 10px;
-  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
 #menu ul li a:hover {
   background-color: var(--color-accent);
-  color: #1d1d1d;
+  color: #fff;
 }
 
 /* ---------------- ICON GRID ----------------------- */
@@ -85,16 +84,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
-  border-radius: 16px;
-  background-color: var(--color-bg);
+  padding: 18px;
+  border-radius: 36px;
+  background-color: var(--color-button-bg);
   text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 200px;
+  height: auto;
   justify-content: center;
-  color: white;
+  color: var(--color-button-text);
   text-align: center;
+  border: 2px solid transparent;
+}
+
+.icon a:hover {
+  color: var(--color-hover);
+  border-color: var(--color-hover);
 }
 
 .icon img {
@@ -115,31 +120,21 @@ body {
   margin: 0;
 }
 
-/* ---------------- BOTONES ------------------------ */
-button,
-.boton-pago,
-#menu ul li a {
-  display: inline-block;
-  background: linear-gradient(135deg, #ffd166, #fcbf49);
-  color: #1d1d1d;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  text-align: center;
-  text-decoration: none;
+/* ---------------- RESPONSIVE ---------------------- */
+@media (max-width: 1024px) {
+  .ContIcons {
+    justify-content: center;
+  }
 }
 
-button:hover,
-.boton-pago:hover,
-#menu ul li a:hover {
-  background: linear-gradient(135deg, #fcbf49, #ffd166);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+@media (max-width: 768px) {
+  .ContIcons {
+    justify-content: center;
+  }
+  .floating-buttons {
+    flex-direction: column;
+    right: 45%;
+  }
 }
 
 /* ---------------- FLOATING BUTTONS ---------------- */
@@ -155,26 +150,14 @@ button:hover,
 }
 
 .floating-buttons a {
-  width: 60px;
-  height: 60px;
+  width: 55.8px;
+  height: 55.8px;
   border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.floating-buttons a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-
-.floating-buttons a img {
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #whatsapp-button {
@@ -185,31 +168,21 @@ button:hover,
   background-color: #093764;
 }
 
-/* ---------------- RESPONSIVE ---------------------- */
-@media (max-width: 1024px) {
-  .ContIcons {
-    justify-content: center;
-  }
+.floating-buttons a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-  #cont-nav {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    gap: 20px;
-  }
+.floating-buttons a img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
 
-  #menu ul {
-    justify-content: center;
-  }
-
-  .ContIcons {
-    justify-content: center;
-  }
-
-  .floating-buttons {
-    flex-direction: column;
-    right: 45%;
-  }
+ul > ul li a {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
