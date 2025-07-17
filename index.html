@@ -4,75 +4,232 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo Fiancar Contact Center</title>
-  <link rel="stylesheet" href="styles2.css">
   <link rel="icon" type="image/svg" href="img/FavIcon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f6f8;
+    }
+
+    #cont-nav {
+      background-color: #054c8a;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    #logo img {
+      height: 40px;
+    }
+
+    #menu ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      gap: 8px;
+    }
+
+    #menu ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 10px;
+      background: #003b6f;
+      border-radius: 20px;
+      font-size: 12px;
+      transition: background 0.3s;
+      white-space: nowrap;
+    }
+
+    #menu ul li a:hover {
+      background: #e53935;
+    }
+
+    .slider {
+      position: relative;
+      text-align: center;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #cont-tit-bnr {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #003b6f;
+      font-weight: 700;
+      text-shadow: 0 0 8px #fff;
+      text-align: center;
+    }
+
+    #cont-tit-bnr h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .ContIcons {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 20px;
+      padding: 40px 10px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .icon {
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .icon:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .icon p {
+      font-size: 0.85rem;
+      color: #003b6f;
+      font-weight: 500;
+    }
+
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .floating-buttons a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #054c8a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .floating-buttons a:hover {
+      transform: scale(1.1);
+    }
+
+    .floating-buttons a img {
+      width: 70%;
+      height: 70%;
+    }
+
+    @media (max-width: 1200px) {
+      .ContIcons {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      #cont-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #menu ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #menu ul li {
+        width: 100%;
+      }
+
+      #cont-tit-bnr h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div id="cont-nav">
-      <div id="logo">
-        <a href="https://www.grupofiancar.com" target="_blank">
-          <img src="img/GrupoF.svg" alt="Grupo Fiancar">
-        </a>
-      </div>
-      <nav id="menu">
-        <ul>
-          <li><a href="http://reciboelectronico.grupofiancar.com/mirecibo/" target="_blank">RECIBOS DE SUELDOS</a></li>
-          <li><a href="https://novedadesfiancarcom.wordpress.com/solicitudes/" target="_blank">SOLICITUDES DE AGENTES</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/19Wl23gvjgi1j-TlaWjDk4l7FcGzsDoGoL2d3cx7KjI0" target="_blank">SÁBADOS</a></li>
-          <li><a href="https://business.facebook.com/latest/home?asset_id=1447149785526527" target="_blank">REDES</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LqoJg7AkjNM55CfgI1ETihshbSC7orFPQdQ0M4n125c" target="_blank">K.P.I</a></li>
-          <li><a href="https://novedadesfiancarcom.wordpress.com/noticias/" target="_blank">NOTICIAS</a></li>
-          <li><a href="https://novedadesfiancarcom.wordpress.com/acerca-de-pagina/" target="_blank">CRITERIOS DE AUDITORÍA</a></li>
-          <li><a href="https://drive.google.com/drive/folders/15IVg-TFEsADa-Y8LLSPQSex0GegbGC3N" target="_blank">IMG WHATSAPP</a></li>
-          <li><a href="https://gcp.autopartners.net/home/overview" target="_blank">GENERAL MOTORS</a></li>
-          <li><a href="https://novedadesfiancarcom.wordpress.com/1486-2/" target="_blank">SOLICITUD DE CONTACTO</a></li>
-          <li><a href="https://script.google.com/macros/s/AKfycbwOLSlEKj5y_Of7H_X_gtGTLgXk81z5YdX7_N21xeNzcECNySOz91hDLdAmmSvIM6t7rA/exec" target="_blank">TAREAS</a></li>
-        </ul>
-      </nav>
+  <div id="cont-nav">
+    <div id="logo">
+      <img src="img/GrupoF.svg" alt="Grupo Fiancar">
     </div>
-  </header>
+    <div id="menu">
+      <ul>
+        <li><a href="#">RECIBOS DE SUELDOS</a></li>
+        <li><a href="#">SOLICITUDES DE AGENTES</a></li>
+        <li><a href="#">SABADOS</a></li>
+        <li><a href="#">REDES</a></li>
+        <li><a href="#">K.P.I</a></li>
+        <li><a href="#">NOTICIAS</a></li>
+        <li><a href="#">CRITERIOS DE AUDITORIA</a></li>
+        <li><a href="#">IMG.WHATSAPP</a></li>
+        <li><a href="#">GENERAL MOTORS</a></li>
+        <li><a href="#">CONTACTO</a></li>
+        <li><a href="#">TAREAS</a></li>
+      </ul>
+    </div>
+  </div>
 
   <div class="slider">
-    <img src="img/SlideIndex.jpg" alt="Banner Principal">
+    <img src="img/SlideIndex.jpg" alt="Banner">
     <div id="cont-tit-bnr">
       <h1>HACIA UNA NUEVA</h1>
       <h1>MOVILIDAD</h1>
     </div>
   </div>
 
-  <main>
-    <div class="ContIcons">
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/campanas/" target="_blank"><img src="img/Campanas.svg"><p>CAMPAÑAS</p></a></div>
-      <div class="icon"><a href="https://drive.google.com/drive/folders/16puQSGYUfNIqW1yp0-ouwynlfcU2OQyD" target="_blank"><img src="img/MaterialFormacion.svg"><p>FORMACIÓN</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/ramificacion/" target="_blank"><img src="img/Internos.svg"><p>INTERNOS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/lista-de-precios/" target="_blank"><img src="img/ListaDePrecios.svg"><p>LISTAS DE PRECIOS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/herramientas/" target="_blank"><img src="img/2- Material Técnico.png"><p>HERRAMIENTAS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/wp-admin/post.php?post=53&action=edit" target="_blank"><img src="img/Tarifas.svg"><p>TARIFARIO</p></a></div>
-      <div class="icon"><a href="https://docs.google.com/spreadsheets/d/1LqoJg7AkjNM55CfgI1ETihshbSC7orFPQdQ0M4n125c/edit#gid=1169580297" target="_blank"><img src="img/LeadsRojos.svg"><p>LEADS ROJOS</p></a></div>
-      <div class="icon"><a href="https://vehiculos.grupofiancar.com/fichas/" target="_blank"><img src="img/FichasTecnicas.svg"><p>FICHAS TÉCNICAS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/estandarizacion-de-los-procesos/" target="_blank"><img src="img/Procesos.svg"><p>PROCESOS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/reclamos/" target="_blank"><img src="img/Reclamo2.png"><p>RECLAMOS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/tienda/" target="_blank"><img src="img/ToleranciaKm.svg"><p>TOLERANCIA KM</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/diccionario/" target="_blank"><img src="img/Diccionario.svg"><p>DICCIONARIO</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/servicios-2/" target="_blank"><img src="img/Repuestos.svg"><p>REPUESTOS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/seguros-con-los-que-no-trabajamos/" target="_blank"><img src="img/Seguros.svg"><p>SEGUROS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/auditoria/" target="_blank"><img src="img/Auditorias.svg"><p>AUDITORIAS</p></a></div>
-      <div class="icon"><a href="https://novedadesfiancarcom.wordpress.com/2024/08/22/capacitate/" target="_blank"><img src="img/Cursos.svg"><p>CURSOS</p></a></div>
-      <div class="icon"><a href="https://drive.google.com/drive/folders/14Hez90MhueX4Lz8NSmHYNhuO7tgy0Bdr" target="_blank"><img src="img/CuentasBancarias.svg"><p>CUENTAS BANCARIAS</p></a></div>
-      <div class="icon"><a href="https://docs.google.com/spreadsheets/d/1LqoJg7AkjNM55CfgI1ETihshbSC7orFPQdQ0M4n125c/edit#gid=1491032438" target="_blank"><img src="img/Seguridad.png"><p>USUARIOS Y CONTRASEÑAS</p></a></div>
-    </div>
-  </main>
+  <div class="ContIcons">
+    <div class="icon"><a href="#"><img src="img/Campanas.svg" alt="Campanas"><p>CAMPAÑAS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/MaterialFormacion.svg" alt="Formación"><p>FORMACIÓN</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Internos.svg" alt="Internos"><p>INTERNOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/ListaDePrecios.svg" alt="Listas"><p>LISTAS DE PRECIOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/2- Material Técnico.png" alt="Herramientas"><p>HERRAMIENTAS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Tarifas.svg" alt="Tarifario"><p>TARIFARIO</p></a></div>
+    <div class="icon"><a href="#"><img src="img/LeadsRojos.svg" alt="Leads"><p>LEADS ROJOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/FichasTecnicas.svg" alt="Fichas"><p>FICHAS TÉCNICAS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Procesos.svg" alt="Procesos"><p>PROCESOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Reclamo2.png" alt="Reclamos"><p>RECLAMOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/ToleranciaKm.svg" alt="Tolerancia"><p>TOLERANCIA KM</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Diccionario.svg" alt="Diccionario"><p>DICCIONARIO</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Repuestos.svg" alt="Repuestos"><p>REPUESTOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Seguros.svg" alt="Seguros"><p>SEGUROS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Auditorias.svg" alt="Auditorias"><p>AUDITORIAS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Cursos.svg" alt="Cursos"><p>CURSOS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/CuentasBancarias.svg" alt="Cuentas"><p>CUENTAS BANCARIAS</p></a></div>
+    <div class="icon"><a href="#"><img src="img/Seguridad.png" alt="Seguridad"><p>USUARIOS Y CONTRASEÑAS</p></a></div>
+  </div>
 
   <div class="floating-buttons">
-    <a href="https://wa.me/+598091318211" id="whatsapp-button">
+    <a href="https://wa.me/+598091318211">
       <img src="img/whatsapp-icon.png" alt="WhatsApp">
     </a>
-    <a href="https://grupofiancar.south.3cx.us:5001/rodrigoilundain" id="chat-button">
+    <a href="https://grupofiancar.south.3cx.us:5001/rodrigoilundain">
       <img src="img/chat.png" alt="Chat">
     </a>
-    <a href="https://grupofiancar.south.3cx.us:5001/webclient/#/login" id="chat-button">
+    <a href="https://grupofiancar.south.3cx.us:5001/webclient/#/login">
       <img src="img/3CX.jpeg" alt="Login">
     </a>
   </div>
