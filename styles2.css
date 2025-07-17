@@ -1,74 +1,78 @@
-/* ---------------- VARIABLES ---------------------- */
 :root {
   --color-bg: #054c8a;
   --color-text: #ffffff;
-  --color-accent: red;
-  --color-hover: red;
+  --color-accent: #e53935;
+  --color-hover: #e53935;
   --color-button-bg: #ffffff;
   --color-button-text: #054c8a;
+  --color-subtle: #f4f6f9;
   --font-main: 'Roboto', sans-serif;
 }
 
-/* ---------------- GENERAL ------------------------ */
 body {
   margin: 0;
   font-family: var(--font-main);
-  background-color: #f8f9fa;
+  background-color: var(--color-subtle);
+  color: #333;
 }
 
-#cont {
-  width: 100%;
+header {
   background-color: var(--color-bg);
+  padding: 20px 0;
+  color: var(--color-text);
 }
 
-/* ---------------- HEADER / NAV ------------------- */
 #cont-nav {
   max-width: 1366px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  height: 100px;
+  justify-content: space-between;
   padding: 0 20px;
 }
 
 #logo img {
   display: block;
+  height: 42px;
 }
 
 #menu ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 #menu ul li a {
   text-decoration: none;
   font-size: 14px;
   color: var(--color-button-text);
-  padding: 8px 16px;
+  padding: 10px 16px;
   background-color: var(--color-button-bg);
   border-radius: 20px;
   transition: all 0.3s ease;
   font-weight: 500;
+  border: 1px solid transparent;
 }
 
 #menu ul li a:hover {
   color: var(--color-hover);
-  border: 1px solid var(--color-hover);
+  border-color: var(--color-hover);
 }
 
 /* ---------------- ICON GRID ----------------------- */
+main {
+  padding: 40px 20px;
+}
+
 .ContIcons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
   max-width: 1280px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: 0 auto;
 }
 
 .icon {
@@ -83,10 +87,10 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border-radius: 36px;
+  border-radius: 24px;
   background-color: var(--color-button-bg);
   text-decoration: none;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   justify-content: center;
   color: var(--color-button-text);
@@ -97,8 +101,8 @@ body {
 .icon a:hover {
   color: var(--color-hover);
   border-color: var(--color-hover);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .icon img {
@@ -119,27 +123,54 @@ body {
   margin: 0;
 }
 
+/* ---------------- BANNER -------------------- */
+.slider {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.slider img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#cont-tit-bnr {
+  position: relative;
+  top: -60px;
+}
+
+#cont-tit-bnr h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
 /* ---------------- FLOATING BUTTONS ---------------- */
 .floating-buttons {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   gap: 10px;
   z-index: 1000;
 }
 
 .floating-buttons a {
-  width: 55.8px;
-  height: 55.8px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.floating-buttons a:hover {
+  transform: scale(1.15);
 }
 
 #whatsapp-button {
@@ -150,23 +181,40 @@ body {
   background-color: #093764;
 }
 
-.floating-buttons a:hover {
-  transform: scale(1.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.floating-buttons img {
+  width: 32px;
+  height: 32px;
 }
 
-.floating-buttons a img {
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-}
+/* ---------------- RESPONSIVE ---------------------- */
+@media (max-width: 1024px) {
+  #cont-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-@media (max-width: 768px) {
+  #menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .ContIcons {
     justify-content: center;
   }
+}
+
+@media (max-width: 768px) {
   .floating-buttons {
-    flex-direction: column;
-    right: 45%;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .slider img {
+    max-height: 300px;
+  }
+
+  #cont-tit-bnr h1 {
+    font-size: 1.4rem;
   }
 }
