@@ -2,8 +2,8 @@
 :root {
   --color-bg: #054c8a;
   --color-text: #ffffff;
-  --color-accent: red;
-  --color-hover: red;
+  --color-accent: #e53935;
+  --color-hover: #e53935;
   --color-button-bg: #ffffff;
   --color-button-text: #054c8a;
   --font-main: 'Roboto', sans-serif;
@@ -44,22 +44,20 @@ body {
   gap: 10px;
 }
 
-#menu ul li {
-  margin: 0 5px;
-}
-
 #menu ul li a {
   text-decoration: none;
-  font-size: 16px;
-  color: var(--color-text);
-  padding: 6px 12px;
-  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-button-text);
+  padding: 8px 16px;
+  background-color: var(--color-button-bg);
+  border-radius: 20px;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 #menu ul li a:hover {
-  background-color: var(--color-accent);
-  color: #fff;
+  color: var(--color-hover);
+  border: 1px solid var(--color-hover);
 }
 
 /* ---------------- ICON GRID ----------------------- */
@@ -84,13 +82,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 18px;
+  padding: 20px;
   border-radius: 36px;
   background-color: var(--color-button-bg);
   text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: auto;
   justify-content: center;
   color: var(--color-button-text);
   text-align: center;
@@ -100,6 +97,8 @@ body {
 .icon a:hover {
   color: var(--color-hover);
   border-color: var(--color-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .icon img {
@@ -118,23 +117,6 @@ body {
   font-size: 0.95rem;
   font-weight: 500;
   margin: 0;
-}
-
-/* ---------------- RESPONSIVE ---------------------- */
-@media (max-width: 1024px) {
-  .ContIcons {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .ContIcons {
-    justify-content: center;
-  }
-  .floating-buttons {
-    flex-direction: column;
-    right: 45%;
-  }
 }
 
 /* ---------------- FLOATING BUTTONS ---------------- */
@@ -179,10 +161,14 @@ body {
   border-radius: 50%;
 }
 
-ul > ul li a {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+/* ---------------- RESPONSIVE ---------------------- */
+@media (max-width: 768px) {
+  .ContIcons {
+    justify-content: center;
+  }
+
+  .floating-buttons {
+    flex-direction: column;
+    right: 45%;
+  }
 }
