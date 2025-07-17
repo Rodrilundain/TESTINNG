@@ -1,17 +1,16 @@
 /* ---------------- VARIABLES ---------------------- */
 :root {
-  --color-bg: #063f75;         /* azul profundo */
+  --color-bg: #054c8a;
   --color-text: #ffffff;
-  --color-accent: #ffd166;     /* dorado suave */
-  --color-light: #f2f2f2;
-  --font-main: 'Segoe UI', 'Roboto', sans-serif;
+  --color-accent: #fcbf49;
+  --font-main: 'Roboto', sans-serif;
 }
 
 /* ---------------- GENERAL ------------------------ */
 body {
   margin: 0;
   font-family: var(--font-main);
-  background-color: var(--color-light);
+  background-color: #f4f7f9;
   color: #333;
 }
 
@@ -22,41 +21,46 @@ body {
 
 /* ---------------- HEADER / NAV ------------------- */
 #cont-nav {
-  max-width: 1280px;
+  max-width: 1366px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 90px;
-  padding: 0 24px;
+  height: 100px;
+  padding: 0 20px;
+  justify-content: space-between;
 }
 
 #logo img {
   display: block;
-  height: 60px;
+  max-height: 80px;
 }
 
 #menu ul {
-  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#menu ul li {
+  margin: 0 5px;
 }
 
 #menu ul li a {
   text-decoration: none;
-  color: var(--color-text);
-  font-weight: 500;
   font-size: 16px;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  color: var(--color-text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 #menu ul li a:hover {
   background-color: var(--color-accent);
-  color: #000;
+  color: #1d1d1d;
 }
 
 /* ---------------- ICON GRID ----------------------- */
@@ -64,10 +68,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 32px;
-  max-width: 1200px;
+  gap: 24px;
+  max-width: 1280px;
   margin: 60px auto;
-  padding: 0 16px;
+  padding: 0 20px;
 }
 
 .icon {
@@ -78,26 +82,26 @@ body {
 
 .icon a {
   width: 100%;
-  height: 200px;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  text-decoration: none;
-  border-radius: 18px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  padding: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--color-bg);
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
+  height: 200px;
+  justify-content: center;
+  color: white;
   text-align: center;
 }
 
 .icon img {
   width: 64px;
   height: 64px;
+  margin-bottom: 12px;
   object-fit: contain;
-  margin-bottom: 10px;
   transition: transform 0.3s ease;
 }
 
@@ -106,9 +110,36 @@ body {
 }
 
 .icon p {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 500;
   margin: 0;
+}
+
+/* ---------------- BOTONES ------------------------ */
+button,
+.boton-pago,
+#menu ul li a {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd166, #fcbf49);
+  color: #1d1d1d;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover,
+.boton-pago:hover,
+#menu ul li a:hover {
+  background: linear-gradient(135deg, #fcbf49, #ffd166);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 /* ---------------- FLOATING BUTTONS ---------------- */
@@ -117,21 +148,33 @@ body {
   bottom: 20px;
   right: 20px;
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
-  z-index: 999;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
 }
 
 .floating-buttons a {
   width: 60px;
   height: 60px;
-  background-color: #ffffff;
   border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+}
+
+.floating-buttons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.floating-buttons a img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
 }
 
 #whatsapp-button {
@@ -142,21 +185,10 @@ body {
   background-color: #093764;
 }
 
-.floating-buttons a:hover {
-  transform: scale(1.15);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-.floating-buttons a img {
-  width: 70%;
-  height: 70%;
-  border-radius: 50%;
-}
-
 /* ---------------- RESPONSIVE ---------------------- */
 @media (max-width: 1024px) {
   .ContIcons {
-    gap: 24px;
+    justify-content: center;
   }
 }
 
@@ -165,6 +197,11 @@ body {
     flex-direction: column;
     height: auto;
     padding: 20px;
+    gap: 20px;
+  }
+
+  #menu ul {
+    justify-content: center;
   }
 
   .ContIcons {
@@ -172,14 +209,7 @@ body {
   }
 
   .floating-buttons {
-    right: 50%;
-    transform: translateX(50%);
     flex-direction: column;
+    right: 45%;
   }
-}
-
-ul > ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
