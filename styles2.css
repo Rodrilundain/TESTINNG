@@ -1,153 +1,121 @@
 :root {
-  --color-bg: #054c8a;
-  --color-text: #ffffff;
-  --color-accent: #e53935;
-  --color-hover: #e53935;
-  --color-button-bg: #ffffff;
-  --color-button-text: #054c8a;
-  --color-subtle: #f4f6f9;
-  --font-main: 'Roboto', sans-serif;
+  --azul: #054c8a;
+  --azul-oscuro: #003b6f;
+  --blanco: #ffffff;
+  --gris-fondo: #f4f6f8;
+  --rojo-hover: #e53935;
+  --sombra: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 body {
   margin: 0;
-  font-family: var(--font-main);
-  background-color: var(--color-subtle);
-  color: #333;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--gris-fondo);
 }
 
-header {
-  background-color: var(--color-bg);
-  padding: 20px 0;
-  color: var(--color-text);
-}
-
+/* NAVBAR */
 #cont-nav {
-  max-width: 1366px;
-  margin: 0 auto;
+  background-color: var(--azul);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 #logo img {
-  display: block;
-  height: 42px;
+  height: 40px;
 }
 
 #menu ul {
-  list-style: none;
   display: flex;
-  gap: 15px;
-  margin: 0;
+  flex-wrap: wrap;
   padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 8px;
 }
 
 #menu ul li a {
+  color: var(--blanco);
   text-decoration: none;
-  font-size: 14px;
-  color: var(--color-button-text);
-  padding: 10px 16px;
-  background-color: var(--color-button-bg);
+  padding: 6px 10px;
+  background: var(--azul-oscuro);
   border-radius: 20px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  border: 1px solid transparent;
+  font-size: 12px;
+  transition: background 0.3s;
+  white-space: nowrap;
 }
 
 #menu ul li a:hover {
-  color: var(--color-hover);
-  border-color: var(--color-hover);
+  background: var(--rojo-hover);
 }
 
-/* ---------------- ICON GRID ----------------------- */
-main {
-  padding: 40px 20px;
-}
-
-.ContIcons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.icon {
-  width: 160px;
-  display: flex;
-  justify-content: center;
-}
-
-.icon a {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-radius: 24px;
-  background-color: var(--color-button-bg);
-  text-decoration: none;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  justify-content: center;
-  color: var(--color-button-text);
-  text-align: center;
-  border: 2px solid transparent;
-}
-
-.icon a:hover {
-  color: var(--color-hover);
-  border-color: var(--color-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-}
-
-.icon img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 12px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.icon a:hover img {
-  transform: scale(1.1);
-}
-
-.icon p {
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-/* ---------------- BANNER -------------------- */
+/* BANNER */
 .slider {
-  margin-top: 20px;
+  position: relative;
   text-align: center;
 }
 
 .slider img {
   width: 100%;
-  max-height: 450px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto;
+  display: block;
 }
 
 #cont-tit-bnr {
-  position: relative;
-  top: -60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--azul-oscuro);
+  font-weight: 700;
+  text-shadow: 0 0 8px var(--blanco);
+  text-align: center;
 }
 
 #cont-tit-bnr h1 {
   margin: 0;
-  font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5em;
 }
 
-/* ---------------- FLOATING BUTTONS ---------------- */
+/* ICONOS GRID */
+.ContIcons {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+  padding: 40px 10px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.icon {
+  text-align: center;
+  background: var(--blanco);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.icon p {
+  font-size: 0.85rem;
+  color: var(--azul-oscuro);
+  font-weight: 500;
+}
+
+/* BOTONES FLOTANTES */
 .floating-buttons {
   position: fixed;
   bottom: 20px;
@@ -155,66 +123,53 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .floating-buttons a {
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  background: var(--azul);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
 .floating-buttons a:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
-#whatsapp-button {
-  background-color: #25D366;
+.floating-buttons a img {
+  width: 70%;
+  height: 70%;
 }
 
-#chat-button {
-  background-color: #093764;
-}
-
-.floating-buttons img {
-  width: 32px;
-  height: 32px;
-}
-
-/* ---------------- RESPONSIVE ---------------------- */
-@media (max-width: 1024px) {
-  #cont-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  #menu ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
+/* RESPONSIVE */
+@media (max-width: 1200px) {
   .ContIcons {
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .floating-buttons {
-    right: 15px;
-    bottom: 15px;
+  #cont-nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .slider img {
-    max-height: 300px;
+  #menu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #menu ul li {
+    width: 100%;
   }
 
   #cont-tit-bnr h1 {
-    font-size: 1.4rem;
+    font-size: 1.5em;
   }
 }
