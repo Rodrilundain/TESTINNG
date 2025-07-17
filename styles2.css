@@ -4,7 +4,6 @@
   --blanco: #ffffff;
   --gris-fondo: #f4f6f8;
   --rojo-hover: #e53935;
-  --sombra: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -13,7 +12,6 @@ body {
   background-color: var(--gris-fondo);
 }
 
-/* NAVBAR */
 #cont-nav {
   background-color: var(--azul);
   display: flex;
@@ -37,7 +35,7 @@ body {
 }
 
 #menu ul li a {
-  color: var(--blanco);
+  color: white;
   text-decoration: none;
   padding: 6px 10px;
   background: var(--azul-oscuro);
@@ -51,7 +49,6 @@ body {
   background: var(--rojo-hover);
 }
 
-/* BANNER */
 .slider {
   position: relative;
   text-align: center;
@@ -79,7 +76,6 @@ body {
   font-size: 2.5em;
 }
 
-/* ICONOS GRID */
 .ContIcons {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -92,14 +88,22 @@ body {
 .icon {
   text-align: center;
   background: var(--blanco);
-  border-radius: 20px;
+  border-radius: 50%;
   padding: 20px;
-  box-shadow: var(--sombra);
-  transition: transform 0.3s, box-shadow 0.3s;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .icon:hover {
-  transform: translateY(-5px);
+  transform: scale(1.1);
+  background: var(--rojo-hover);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -107,15 +111,24 @@ body {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.icon:hover img {
+  transform: scale(1.1);
 }
 
 .icon p {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--azul-oscuro);
   font-weight: 500;
+  margin: 0;
 }
 
-/* BOTONES FLOTANTES */
+.icon:hover p {
+  color: white;
+}
+
 .floating-buttons {
   position: fixed;
   bottom: 20px;
@@ -147,10 +160,9 @@ body {
   height: 70%;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1200px) {
   .ContIcons {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 
