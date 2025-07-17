@@ -2,8 +2,8 @@
 :root {
   --color-bg: #054c8a;
   --color-text: #ffffff;
-  --color-accent: #e53935;
-  --color-hover: #e53935;
+  --color-accent: red;
+  --color-hover: red;
   --color-button-bg: #ffffff;
   --color-button-text: #054c8a;
   --font-main: 'Roboto', sans-serif;
@@ -161,12 +161,10 @@ body {
   border-radius: 50%;
 }
 
-/* ---------------- RESPONSIVE ---------------------- */
 @media (max-width: 768px) {
   .ContIcons {
     justify-content: center;
   }
-
   .floating-buttons {
     flex-direction: column;
     right: 45%;
